@@ -317,7 +317,7 @@ footer{
   .cards,
   .projects,
   .contactgrid,
-  form{
+  form{    
     grid-template-columns:1fr;
   }
   .capability{
