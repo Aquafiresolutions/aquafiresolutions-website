@@ -324,4 +324,114 @@ footer{
     display:block;
   }
   textarea{grid-column:1}
+} 
+/* ===== PREMIUM HERO OVERRIDE ===== */
+.hero{
+    min-height:100vh !important;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,
+    rgba(0,0,0,.88) 0%,
+    rgba(0,0,0,.70) 40%,
+    rgba(0,0,0,.25) 100%),
+    url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80") center center/cover no-repeat !important;
 }
+.hero-content{
+    max-width:700px;
+    padding:60px;
+}
+.hero-tag{
+    color:#ff2a2a;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+.hero h1{
+    font-size:92px;
+    line-height:0.9;
+    font-weight:900;
+    text-transform:uppercase;
+    margin:20px 0;
+    color:#fff;
+}
+.hero p{
+    font-size:20px;
+    color:#cfcfcf;
+    line-height:1.8;
+    max-width:650px;
+}
+.btn,
+.cta-btn{
+    background:#e10600;
+    color:#fff;
+    padding:18px 38px;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:700;
+    display:inline-block;
+    margin-top:25px;
+    transition:.3s;
+}
+.btn:hover,
+.cta-btn:hover{
+    background:#ff2a2a;
+}
+.stats{
+    background:#070707;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+.stat{
+    padding:35px;
+    text-align:center;
+    border-right:1px solid #222;
+}
+.stat:last-child{
+    border-right:none;
+}
+.stat h3{
+    color:#fff;
+    font-size:44px;
+    margin:0;
+}
+.stat p{
+    color:#9a9a9a;
+    text-transform:uppercase;
+    font-size:12px;
+    letter-spacing:2px;
+}
+section{
+    padding:100px 8%;
+}
+body{
+    background:#050505;
+    color:#fff;
+}
+h2{
+    font-size:60px;
+    text-transform:uppercase;
+    line-height:1;
+    margin-bottom:25px;
+}
+@media(max-width:768px){
+.hero{
+    min-height:80vh;
+}
+.hero-content{
+    padding:30px;
+}
+.hero h1{
+    font-size:58px;
+}
+.stats{
+    grid-template-columns:1fr 1fr;
+}
+h2{
+    font-size:38px;
+}
+}
+
