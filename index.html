@@ -30,7 +30,12 @@
     .hero-text p{max-width:430px;margin:28px 0}
     .btn{display:inline-block;border:1px solid #777;padding:16px 24px;font-family:Oswald,sans-serif;text-transform:uppercase;font-size:14px}
     .btn.red{background:#d92721;border-color:#d92721}
-    .hero-img{background:url('https://images.unsplash.com/photo-1581093458791-9d15482442f6?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;position:relative}
+    .hero-img{
+min-height:720px;
+background:url('https://picsum.photos/1200/800') center center no-repeat;
+background-size:cover;
+position:relative;
+}
     .hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050607 0%,transparent 45%,rgba(0,0,0,.15))}
     .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #252525;background:#080b0d}
     .stat{padding:34px;border-right:1px solid #252525}
