@@ -1,181 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aqua Fire Solutions</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aqua Fire Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:#050607;color:#fff;font-family:Inter,Arial,sans-serif}
+    a{text-decoration:none;color:inherit}
+    img{width:100%;display:block;object-fit:cover}
+    .page{max-width:1500px;margin:auto;background:#050607}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 44px;border-bottom:1px solid #222;background:#050607;position:sticky;top:0;z-index:10}
+    .logo{display:flex;align-items:center;gap:10px;font-family:Oswald,sans-serif;font-weight:700;letter-spacing:2px}
+    .logo-mark{width:30px;height:38px;background:#d92721;clip-path:polygon(50% 0,100% 42%,72% 100%,50% 75%,28% 100%,0 42%)}
+    .logo span{display:block;font-size:22px;line-height:18px}
+    .logo small{font-size:11px;letter-spacing:5px;color:#ddd}
+    .links{display:flex;gap:34px;font-family:Oswald,sans-serif;font-size:13px;text-transform:uppercase}
+    .quote{background:#d92721;padding:14px 22px;font-family:Oswald,sans-serif;font-size:13px;text-transform:uppercase}
+    .hero{min-height:720px;display:grid;grid-template-columns:1fr 1.2fr;border-bottom:1px solid #252525}
+    .hero-text{padding:110px 55px;background:linear-gradient(90deg,#050607 0%,#091016 100%)}
+    .tag{color:#e0312b;font-family:Oswald,sans-serif;text-transform:uppercase;font-size:14px;margin-bottom:22px}
+    h1,h2,h3{font-family:Oswald,sans-serif;text-transform:uppercase;line-height:1.05}
+    h1{font-size:76px;max-width:600px}
+    h2{font-size:50px}
+    h3{font-size:27px}
+    p{color:#cfcfcf;line-height:1.7;font-size:15px}
+    .hero-text p{max-width:430px;margin:28px 0}
+    .btn{display:inline-block;border:1px solid #777;padding:16px 24px;font-family:Oswald,sans-serif;text-transform:uppercase;font-size:14px}
+    .btn.red{background:#d92721;border-color:#d92721}
+    .hero-img{background:url('https://images.unsplash.com/photo-1581093458791-9d15482442f6?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;position:relative}
+    .hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050607 0%,transparent 45%,rgba(0,0,0,.15))}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #252525;background:#080b0d}
+    .stat{padding:34px;border-right:1px solid #252525}
+    .stat b{font-family:Oswald,sans-serif;font-size:36px}
+    .stat p{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:13px;color:#fff;margin-top:8px}
+    .about{display:grid;grid-template-columns:1fr 1.35fr;border-bottom:1px solid #252525}
+    .about .text{padding:72px 55px}
+    .about-img{min-height:430px;background:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat}
+    .section-head{padding:70px 55px 35px}
+    .cap-row{display:grid;grid-template-columns:360px 1fr;border-top:1px solid #252525}
+    .cap-info{padding:36px 55px;border-right:1px solid #252525}
+    .num{color:#e0312b;font-family:Oswald,sans-serif;font-size:18px;margin-bottom:18px}
+    .cap-img{min-height:250px;background:center/cover no-repeat}
+    .tenant-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .tenant{height:230px;position:relative;background:center/cover no-repeat}
+    .tenant span{position:absolute;left:20px;bottom:18px;font-family:Oswald,sans-serif;text-transform:uppercase;font-size:14px}
+    .projects{padding-bottom:40px;border-top:1px solid #252525}
+    .project-grid{display:grid;grid-template-columns:1.1fr .9fr;border-top:1px solid #252525}
+    .project-large{min-height:560px;background:url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat}
+    .project-list{border-left:1px solid #252525}
+    .project-card{padding:35px;border-bottom:1px solid #252525}
+    .project-card h3{font-size:25px;margin-bottom:14px}
+    .project-card small{color:#aaa}
+    .cta{padding:80px 55px;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;border-top:1px solid #252525}
+    .cta h2{max-width:600px}
+    .contact{display:grid;grid-template-columns:1fr 1.3fr;border-top:1px solid #252525}
+    .contact-info{padding:60px 55px;border-right:1px solid #252525}
+    .info-item{margin:30px 0}
+    .form{padding:60px 55px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    input,select,textarea{width:100%;background:#11171b;border:1px solid #333;padding:18px;color:#fff}
+    textarea{grid-column:1/3;height:160px}
+    footer{display:flex;justify-content:space-between;align-items:center;padding:34px 44px;border-top:1px solid #252525;color:#aaa;font-size:13px}
+    @media(max-width:900px){
+      .links{display:none}
+      .nav{padding:0 20px}
+      .hero,.about,.contact,.project-grid,.cap-row{grid-template-columns:1fr}
+      h1{font-size:48px}
+      h2{font-size:36px}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .tenant-grid{grid-template-columns:1fr 1fr}
+      textarea{grid-column:1}
+      .form-grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-<div class="nav">
-<div class="logo">
-AQUA <span>FIRE</span><br>
-<small>SOLUTIONS</small>
+<div class="page">
+  <nav class="nav">
+    <div class="logo">
+      <div class="logo-mark"></div>
+      <div><span>AQUA FIRE</span><small>SOLUTIONS</small></div>
+    </div>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="quote" href="#contact">Request a Quote</a>
+  </nav>
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <div class="tag">Fire Protection, Built Right</div>
+      <h1>Protecting What Matters Most</h1>
+      <p>We design, install and maintain fire protection systems for residential, commercial and industrial buildings across British Columbia.</p>
+      <a class="btn" href="#capabilities">Our Capabilities →</a>
+    </div>
+    <div class="hero-img"></div>
+  </section>
+  <section class="stats">
+    <div class="stat"><b>100+</b><p>Projects Completed</p></div>
+    <div class="stat"><b>25+</b><p>Years Combined Experience</p></div>
+    <div class="stat"><b>50+</b><p>Professionals & Growing</p></div>
+    <div class="stat"><b>100%</b><p>Commitment to Safety</p></div>
+  </section>
+  <section class="about" id="about">
+    <div class="text">
+      <div class="tag">About Aqua Fire Solutions</div>
+      <h2>Built on Precision. Driven by Safety.</h2>
+      <p>From design to installation and maintenance, we deliver fire protection solutions that meet today’s standards and tomorrow’s challenges.</p>
+      <br>
+      <a class="btn" href="#contact">Learn More →</a>
+    </div>
+    <div class="about-img"></div>
+  </section>
+  <section id="capabilities">
+    <div class="section-head">
+      <div class="tag">Our Capabilities</div>
+      <h2>Comprehensive Solutions. Expertly Delivered.</h2>
+      <p>We provide end-to-end fire protection services tailored to every building and industry.</p>
+    </div>
+    <div class="cap-row">
+      <div class="cap-info"><div class="num">01</div><h3>Fire Sprinkler Installation</h3><p>Expert installation of new fire sprinkler systems for residential, commercial and industrial buildings.</p></div>
+      <div class="cap-img" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1300&q=80')"></div>
+    </div>
+    <div class="cap-row">
+      <div class="cap-info"><div class="num">02</div><h3>Wet & Dry Systems</h3><p>Design and installation of wet and dry pipe systems tailored to your building’s needs.</p></div>
+      <div class="cap-img" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1300&q=80')"></div>
+    </div>
+    <div class="cap-row">
+      <div class="cap-info"><div class="num">03</div><h3>Tenant Improvements</h3><p>Sprinkler system modifications and upgrades for tenant improvement projects.</p></div>
+      <div class="tenant-grid">
+        <div class="tenant" style="background-image:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80')"><span>Cafés</span></div>
+        <div class="tenant" style="background-image:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80')"><span>Dental Clinics</span></div>
+        <div class="tenant" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80')"><span>Restaurants</span></div>
+        <div class="tenant" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80')"><span>Retail Stores</span></div>
+      </div>
+    </div>
+    <div class="cap-row">
+      <div class="cap-info"><div class="num">04</div><h3>Testing & Commissioning</h3><p>Hydrostatic testing, flow testing and system commissioning to ensure code compliance.</p></div>
+      <div class="cap-img" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1300&q=80')"></div>
+    </div>
+    <div class="cap-row">
+      <div class="cap-info"><div class="num">05</div><h3>Service & Maintenance</h3><p>Ongoing inspections, maintenance and 24/7 emergency service to keep systems performing.</p></div>
+      <div class="cap-img" style="background-image:url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1300&q=80')"></div>
+    </div>
+  </section>
+  <section class="projects" id="projects">
+    <div class="section-head">
+      <div class="tag">Our Projects</div>
+      <h2>Proven Experience. Exceptional Results.</h2>
+      <p>A look at projects completed across British Columbia.</p>
+    </div>
+    <div class="project-grid">
+      <div class="project-large"></div>
+      <div class="project-list">
+        <div class="project-card"><h3>River District Condominiums</h3><small>Vancouver, BC</small><p>Complete fire sprinkler installation for a 13-storey condominium development.</p></div>
+        <div class="project-card"><h3>UBCO Parkade</h3><small>Kelowna, BC</small><p>Wet pipe sprinkler system for a new 4-level parkade.</p></div>
+        <div class="project-card"><h3>Industrial Warehouse</h3><small>Surrey, BC</small><p>ESFR sprinkler system installation for distribution warehouse.</p></div>
+        <div class="project-card"><h3>Mechanical Room Upgrade</h3><small>Burnaby, BC</small><p>Upgrade and replacement of aging sprinkler system components.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="tag">Get In Touch</div>
+    <h2>Let’s Build Something Exceptional</h2>
+    <p>Have a project in mind? We’d love to hear about it.</p>
+    <br>
+    <a class="btn" href="#contact">Contact Us →</a>
+  </section>
+  <section class="contact" id="contact">
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <div class="info-item"><p><b>Phone</b><br>(604) 123-4567<br>24/7 Emergency Service</p></div>
+      <div class="info-item"><p><b>Email</b><br>info@aquafiresolutions.ca</p></div>
+      <div class="info-item"><p><b>Location</b><br>Surrey, BC<br>Proudly Serving British Columbia</p></div>
+      <div class="info-item"><p><b>Office Hours</b><br>Mon – Fri: 7:00 AM – 5:00 PM</p></div>
+    </div>
+    <div class="form">
+      <h3>Send Us a Message</h3>
+      <br>
+      <form>
+        <div class="form-grid">
+          <input placeholder="Your Name">
+          <input placeholder="Company Name">
+          <input placeholder="Email Address">
+          <input placeholder="Phone Number">
+          <select><option>Project Type</option><option>Residential</option><option>Commercial</option><option>Industrial</option></select>
+          <select><option>Service Needed</option><option>Installation</option><option>Testing</option><option>Maintenance</option></select>
+          <textarea placeholder="Message"></textarea>
+        </div>
+        <br>
+        <button class="quote" type="submit">Request a Quote</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <div class="logo">
+      <div class="logo-mark"></div>
+      <div><span>AQUA FIRE</span><small>SOLUTIONS</small></div>
+    </div>
+    <div>© 2026 Aqua Fire Solutions. All Rights Reserved.</div>
+  </footer>
 </div>
-
-<nav>
-<a href="index.html" class="active">Home</a>
-<a href="capabilities.html">Capabilities</a>
-<a href="projects.html">Projects</a>
-<a href="contact.html">Contact</a>
-</nav>
-
-<a href="contact.html" class="btn">Request A Quote</a>
-</div>
-</header>
-
-<section class="hero">
-<div class="wrap">
-
-<div class="red">Fire Protection. Built Right.</div>
-
-<h1>
-Protecting<br>
-What Matters<br>
-Most
-</h1>
-
-<p>
-Professional fire sprinkler installation, tenant improvements,
-wet & dry systems, inspections, testing, maintenance and
-emergency service throughout British Columbia.
-</p>
-
-<a href="capabilities.html" class="btn outline">
-Our Capabilities
-</a>
-
-</div>
-</section>
-
-<section class="stats">
-
-<div class="stat">
-<h2>100+</h2>
-<p>Projects Completed</p>
-</div>
-
-<div class="stat">
-<h2>25+</h2>
-<p>Years Experience</p>
-</div>
-
-<div class="stat">
-<h2>50+</h2>
-<p>Professionals & Growth</p>
-</div>
-
-<div class="stat">
-<h2>100%</h2>
-<p>Commitment To Safety</p>
-</div>
-
-</section>
-
-<section class="section two">
-
-<div>
-<div class="red">About Aqua Fire Solutions</div>
-
-<h2>
-Built On Precision.<br>
-Driven By Safety.
-</h2>
-
-<p>
-From tenant improvements and service upgrades to complete
-sprinkler installations, Aqua Fire Solutions delivers
-professional fire protection systems for commercial,
-industrial and residential projects across British Columbia.
-</p>
-
-<br><br>
-
-<a href="contact.html" class="btn">
-Learn More
-</a>
-
-</div>
-
-<div class="imgbox room"></div>
-
-</section>
-
-<section class="section">
-
-<div class="red">Recent Projects</div>
-
-<h2>
-Built For A Wide Range Of Spaces
-</h2>
-
-<div class="cards">
-
-<div class="card">
-<div style="background-image:url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80')"></div>
-<h3>Residential Towers</h3>
-<p>Vancouver, BC</p>
-</div>
-
-<div class="card">
-<div style="background-image:url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80')"></div>
-<h3>Parkades</h3>
-<p>Kelowna, BC</p>
-</div>
-
-<div class="card">
-<div style="background-image:url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=80')"></div>
-<h3>Warehouses</h3>
-<p>Surrey, BC</p>
-</div>
-
-<div class="card">
-<div style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80')"></div>
-<h3>Mechanical Rooms</h3>
-<p>Burnaby, BC</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section contacthero">
-
-<div class="red">Get In Touch</div>
-
-<h2>
-Let's Build<br>
-Something Exceptional
-</h2>
-
-<p>
-Have a project in mind? We'd love to hear about it.
-</p>
-
-<br>
-
-<a href="contact.html" class="btn">
-Contact Us
-</a>
-
-</section>
-
-<footer>
-<div class="footer">
-
-<div>
-Aqua Fire Solutions © 2026
-</div>
-
-<div>
-Surrey, British Columbia
-</div>
-
-</div>
-</footer>
-
 </body>
 </html>
